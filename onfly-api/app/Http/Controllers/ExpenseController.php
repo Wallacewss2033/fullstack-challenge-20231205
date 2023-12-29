@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ExpenseRequest;
 use App\Models\Expense;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class ExpenseController extends Controller
 {
@@ -30,9 +30,8 @@ class ExpenseController extends Controller
         ], 200);
     }
 
-    public function store(Request $request): JsonResponse
+    public function store(ExpenseRequest $request): JsonResponse
     {
-        TODO: //Não esquecer do request
 
         $this->expense->create($request->all());
 
@@ -42,7 +41,7 @@ class ExpenseController extends Controller
         ], 201);
     }
 
-    public function show(int $id)
+    public function show(int $id): JsonResponse
     {
         $expense = $this->expense->find($id);
 
@@ -53,7 +52,7 @@ class ExpenseController extends Controller
         ], 200);
     }
 
-    public function update(Request $request, int $id): JsonResponse
+    public function update(ExpenseRequest $request, int $id): JsonResponse
     {
         $this->expense->find($id)->update($request->all());
 
