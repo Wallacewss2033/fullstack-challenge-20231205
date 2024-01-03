@@ -24,7 +24,6 @@ class ExpenseRequest extends FormRequest
         return [
             'description' => 'required|max:240',
             'date' => 'required|date',
-            'user_id' => 'required',
             'value' => 'required|numeric',
         ];
     }
@@ -35,7 +34,6 @@ class ExpenseRequest extends FormRequest
             'description.required' => 'insira a descriação.',
             'description.max' => 'caracteres excedidos.',
             'date.required' => 'insira a data',
-            'user_id.required' => 'usuário obrigatório',
             'value.required' => 'insira o valor.',
         ];
     }
