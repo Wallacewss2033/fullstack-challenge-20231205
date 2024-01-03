@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\DateNotGreaterThanCurrent;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ExpenseRequest extends FormRequest
@@ -23,7 +24,7 @@ class ExpenseRequest extends FormRequest
     {
         return [
             'description' => 'required|max:191',
-            'date' => 'required|date',
+            'date' => ['required', 'date', new DateNotGreaterThanCurrent],
             'value' => 'required|numeric|min:0',
         ];
     }
