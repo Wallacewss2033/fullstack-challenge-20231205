@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ExpenseRequest;
 use App\Models\Expense;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 
 class ExpenseController extends Controller
@@ -17,8 +18,8 @@ class ExpenseController extends Controller
 
     public function index(): JsonResponse
     {
-        $expenses = $this->expense->get()->toArray();
-
+        $userId = auth()->user()->id;
+        $expenses = $this->expense->join('users', 'expenses.user_id', '=', 'users.id')->select('expenses.*')->get();
         if (!$expenses) {
             return response()->json(['error' => 'Não há despesas.'], 404);
         }
@@ -32,7 +33,7 @@ class ExpenseController extends Controller
 
     public function store(ExpenseRequest $request): JsonResponse
     {
-
+        $request["user_id"] = auth()->user()->id;
         $this->expense->create($request->all());
 
         return response()->json([
