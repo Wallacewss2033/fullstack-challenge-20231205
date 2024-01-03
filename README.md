@@ -15,7 +15,7 @@ Este projeto é um aplicativo CRUD (Create, Read, Update, Delete) de despesas, d
 
 - Clone o projeto
 ```
-git clone 
+git clone git@github.com:Wallacewss2033/fullstack-challenge-20231205.git
 ```
 ### Back-end
 
