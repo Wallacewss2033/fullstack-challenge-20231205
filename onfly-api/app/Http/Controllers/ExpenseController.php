@@ -19,7 +19,11 @@ class ExpenseController extends Controller
     public function index(): JsonResponse
     {
         $userId = auth()->user()->id;
-        $expenses = $this->expense->join('users', 'expenses.user_id', '=', 'users.id')->select('expenses.*')->get();
+
+        $expenses = $this->expense->join('users', 'expenses.user_id', '=', 'users.id')
+            ->select('expenses.*')
+            ->where('expenses.user_id', $userId)->get();
+
         if (!$expenses) {
             return response()->json(['error' => 'Não há despesas.'], 404);
         }
