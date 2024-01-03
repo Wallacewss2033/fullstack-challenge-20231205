@@ -22,9 +22,9 @@ class ExpenseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'description' => 'required|max:240',
+            'description' => 'required|max:191',
             'date' => 'required|date',
-            'value' => 'required|numeric',
+            'value' => 'required|numeric|min:0',
         ];
     }
 
@@ -35,6 +35,7 @@ class ExpenseRequest extends FormRequest
             'description.max' => 'caracteres excedidos.',
             'date.required' => 'insira a data',
             'value.required' => 'insira o valor.',
+            'value.min' => 'O valor não pode ser negativo.',
         ];
     }
 }
