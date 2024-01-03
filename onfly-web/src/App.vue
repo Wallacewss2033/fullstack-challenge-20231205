@@ -1,19 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <NavView />
+  <div class="box-main">
+    <div class="box shadow-sm">
+      <router-view />
+    </div>
+  </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavView from "./components/NavView.vue";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    NavView,
+  },
+};
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -21,6 +22,32 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #68f5ae;
+}
+
+.box-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  background-color: white;
+  width: 80%;
+  min-height: 750px;
+  border-radius: 10px;
+  padding: 35px;
 }
 </style>
