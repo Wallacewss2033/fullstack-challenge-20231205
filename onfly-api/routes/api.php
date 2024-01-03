@@ -16,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/login', [AuthController::class, 'login']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+
+# Auth
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/check-token', [AuthController::class, 'check'])->middleware('auth:sanctum');
 
 # expenses
 Route::post('/expenses', [ExpenseController::class, 'store'])->middleware('auth:sanctum');
