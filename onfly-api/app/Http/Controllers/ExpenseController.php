@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ExpenseRequest;
 use App\Models\Expense;
 use App\Models\User;
+use App\Notifications\CreateExpenseNotification;
 use Illuminate\Http\JsonResponse;
+use Notification;
 
 class ExpenseController extends Controller
 {
@@ -35,10 +37,17 @@ class ExpenseController extends Controller
         ], 200);
     }
 
-    public function store(ExpenseRequest $request): JsonResponse
+    public function store(ExpenseRequest $request, User $user): JsonResponse
     {
-        $request["user_id"] = auth()->user()->id;
+        $id = auth()->user()->id;
+
+        $request["user_id"] = $id;
+
         $this->expense->create($request->all());
+
+        $dataUser = $user->find($id);
+
+        Notification::send($dataUser, new CreateExpenseNotification($dataUser));
 
         return response()->json([
             'success' => true,
