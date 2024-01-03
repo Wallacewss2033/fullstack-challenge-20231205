@@ -23,4 +23,13 @@ class AuthController extends Controller
             ]
         ], 200);
     }
+
+    public function check()
+    {
+        if (auth()->check()) {
+            return response()->json(['success' => true, 'mensagem' => 'Usuário autenticado'], 200);
+        } else {
+            return response()->json(['success' => true, 'mensagem' => 'Token inválido'], 401);
+        }
+    }
 }
