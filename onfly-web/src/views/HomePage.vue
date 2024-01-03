@@ -48,7 +48,7 @@ export default {
           this.expenses = response.data;
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
         });
     },
 
@@ -65,7 +65,7 @@ export default {
           });
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
         })
         .finally(() => {
           this.handlerGet();

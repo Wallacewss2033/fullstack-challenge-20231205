@@ -39,7 +39,7 @@ export default {
           this.expense = response.data;
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
         });
     },
     handlerSubmit(data) {
@@ -55,7 +55,7 @@ export default {
           });
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
         });
     },
     handlerRedirect() {

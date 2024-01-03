@@ -74,14 +74,12 @@ export default {
           this.messages.push(response.message);
           this.messageType = "success";
           cookies.set("auth-token", response.data.token);
-          console.log(cookies.get("auth-token"));
         })
         .catch((error) => {
           this.messages.push(error.response.data.message);
           this.messageType = "danger";
         })
         .finally(() => {
-          console.log("here");
           this.$router.push("/home");
         });
     },
