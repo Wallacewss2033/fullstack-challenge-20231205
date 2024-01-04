@@ -14,7 +14,7 @@ class DateNotGreaterThanCurrent implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (!strtotime($value) <= strtotime(now())) {
+        if (strtotime($value) > strtotime(now())) {
             $fail('A data não deve ser maior que a data atual.');
         }
     }
