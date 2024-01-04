@@ -16,7 +16,10 @@ Este projeto é um aplicativo CRUD (Create, Read, Update, Delete) de despesas, d
 
 ## Instalação 
 
-### Obs: é necessário um servidor redis para rodar as filas.
+### Obs: 
+- é necessário um servidor redis para rodar as filas.
+
+- Atenção para as configurações de Mail, é necessário configurar as variáveis de ambiente na ```.env```. Esse projeto contém envio de email.
 
 - Clone o projeto
 ```
