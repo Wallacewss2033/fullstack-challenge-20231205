@@ -17,15 +17,18 @@
         </label>
       </div>
       <div class="col">
-        <label class="form-label"><strong>Data: </strong> {{ expense.date }} </label>
+        <label class="form-label"
+          ><strong>Data: </strong> {{ expense.format_date }}
+        </label>
       </div>
       <div class="col">
-        <label class="form-label"><strong>Valor: </strong> {{ expense.value }} </label>
+        <label class="form-label"
+          ><strong>Valor: </strong> {{ `R$${expense.format_value}` }}
+        </label>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import endPoints from "@/service/endPoints";
 export default {

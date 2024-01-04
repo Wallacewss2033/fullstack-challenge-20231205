@@ -13,8 +13,8 @@
       <tr :key="expense.id" v-for="(expense, i) in data">
         <th scope="row">{{ ++i }}</th>
         <td>{{ expense.description }}</td>
-        <td>{{ expense.date }}</td>
-        <td>{{ expense.value }}</td>
+        <td>{{ expense.format_date }}</td>
+        <td>{{ `R$${expense.format_value}` }}</td>
         <td class="d-flex justify-content-center">
           <a type="button" class="btn btn-primary mx-1" @click="showItem(expense.id)"
             ><i class="bi bi-eye"></i
