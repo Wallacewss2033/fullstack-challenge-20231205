@@ -19,7 +19,7 @@ class Expense extends Model
         'value',
     ];
 
-    protected $appends = ['format_value', 'format_date', 'full_name'];
+    protected $appends = ['format_value', 'format_date'];
 
     public function getFormatValueAttribute()
     {
