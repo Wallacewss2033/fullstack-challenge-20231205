@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="container">
-    <form-view :expense="expense" @handler-submit="handlerSubmit" />
+    <form-view :expense="expense" :errors="errors" @handler-submit="handlerSubmit" />
   </div>
 </template>
 
@@ -26,6 +26,7 @@ export default {
     return {
       expense: {},
       id: this.$route.query.id,
+      errors: {},
     };
   },
   mounted() {
@@ -55,7 +56,7 @@ export default {
           });
         })
         .catch((error) => {
-          console.error(error);
+          this.errors = error.response.data.errors;
         });
     },
     handlerRedirect() {
