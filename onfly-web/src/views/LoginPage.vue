@@ -74,6 +74,7 @@ export default {
           this.messages.push(response.message);
           this.messageType = "success";
           cookies.set("auth-token", response.data.token);
+          cookies.set("user", response.data.name);
         })
         .catch((error) => {
           this.messages.push(error.response.data.message);
