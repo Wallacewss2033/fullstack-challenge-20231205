@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 # Auth
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/check-token', [AuthController::class, 'check'])->middleware('auth:sanctum');
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 
 # expenses
 Route::post('/expenses', [ExpenseController::class, 'store'])->middleware('auth:sanctum');

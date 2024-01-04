@@ -19,6 +19,7 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Logado com sucesso!',
             'data' => [
+                'name' => auth()->user()->name,
                 'token' => auth()->user()->createToken('auth-token')->plainTextToken,
             ]
         ], 200);
@@ -30,6 +31,13 @@ class AuthController extends Controller
             return response()->json(['success' => true, 'mensagem' => 'Usuário autenticado'], 200);
         } else {
             return response()->json(['success' => true, 'mensagem' => 'Token inválido'], 401);
+        }
+    }
+
+    public function logout()
+    {
+        if (auth()->user()->currentAccessToken()->delete()) {
+            return response()->json(200);
         }
     }
 }
