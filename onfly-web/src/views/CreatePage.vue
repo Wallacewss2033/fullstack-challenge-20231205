@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="container">
-    <form-view @handler-submit="handlerSubmit" />
+    <form-view :errors="errors" @handler-submit="handlerSubmit" />
   </div>
 </template>
 
@@ -21,6 +21,11 @@ export default {
   name: "CreatePage",
   components: {
     FormView,
+  },
+  data() {
+    return {
+      errors: {},
+    };
   },
   methods: {
     handlerSubmit(data) {
@@ -36,7 +41,7 @@ export default {
           });
         })
         .catch((error) => {
-          console.error(error);
+          this.errors = error.response.data.errors;
         });
     },
     handlerRedirect() {
