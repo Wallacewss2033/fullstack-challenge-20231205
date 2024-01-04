@@ -7,5 +7,9 @@ export default {
 
     get(name) {
         return Cookies.get(name);
-    } 
+    },
+
+    remove(name) {
+        return Cookies.remove(name);
+    },
 };
