@@ -10,13 +10,19 @@ Este projeto é um aplicativo CRUD (Create, Read, Update, Delete) de despesas, d
 - Vue.js
 - Bootstrap
 - Vue Router
+- Redis
+- Horizon (gerenciador de filas)
+
 
 ## Instalação 
+
+### Obs: é necessário um servidor redis para rodar as filas.
 
 - Clone o projeto
 ```
 git clone git@github.com:Wallacewss2033/fullstack-challenge-20231205.git
 ```
+
 ### Back-end
 
 - Entre na pasta onfly-api e instale as dependencias
@@ -24,12 +30,17 @@ git clone git@github.com:Wallacewss2033/fullstack-challenge-20231205.git
 composer install
 ```
 
+- Para criar o banco de dados
+```
+php artisan migrate
+```
+
 - Para rodar o projeto
 ```
 php artisan serve
 ```
 
-###front-end
+### front-end
 
 - Entre na pasta onfly-web e instale as dependencias
   
