@@ -38,6 +38,11 @@ composer install
 php artisan migrate
 ```
 
+- Para popular o banco na tabela de usuário
+```
+php artisan db:seed
+```
+
 - Para rodar o projeto
 ```
 php artisan serve
