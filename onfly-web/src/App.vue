@@ -1,7 +1,7 @@
 <template>
   <NavView />
-  <div class="box-main">
-    <div class="box shadow-sm">
+  <div :class="{ 'box-main': !isLoginPage }">
+    <div :class="{ 'box shadow-sm': !isLoginPage }">
       <router-view />
     </div>
   </div>
@@ -12,6 +12,16 @@ import NavView from "./components/NavView.vue";
 export default {
   components: {
     NavView,
+  },
+  data() {
+    return {
+      isLoginPage: false,
+    };
+  },
+  watch: {
+    $route(to) {
+      this.isLoginPage = to.name === "login";
+    },
   },
 };
 </script>
