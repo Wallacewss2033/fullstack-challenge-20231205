@@ -32,6 +32,13 @@ git clone git@github.com:Wallacewss2033/fullstack-challenge-20231205.git
 ```
 composer install
 ```
+- logo após rode esses comandos
+```
+cp .env.example .env
+```
+```
+php artisan key:generate
+``` 
 
 - Para criar o banco de dados
 ```
