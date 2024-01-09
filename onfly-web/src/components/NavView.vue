@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       isLoginPage: false,
-      user: cookies.get("user").split(" ")[0],
+      user: cookies.get("user"),
     };
   },
   watch: {
@@ -58,8 +58,7 @@ export default {
         .then(() => {
           cookies.remove("user");
           cookies.remove("auth-token");
-          this.user = null;
-          this.$router.push("/");
+          window.location.reload();
         })
         .catch((error) => {
           console.error(error);

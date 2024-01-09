@@ -75,13 +75,11 @@ export default {
           this.messageType = "success";
           cookies.set("auth-token", response.data.token);
           cookies.set("user", response.data.name);
+          window.location.replace("/home");
         })
         .catch((error) => {
           this.messages.push(error.response.data.message);
           this.messageType = "danger";
-        })
-        .finally(() => {
-          this.$router.push("/home");
         });
     },
   },
