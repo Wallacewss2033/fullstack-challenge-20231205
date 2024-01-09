@@ -70,7 +70,7 @@ npm install
 - Para rodar o projeto
   
 ```
-vue server
+vue serve
 ```
 
 
