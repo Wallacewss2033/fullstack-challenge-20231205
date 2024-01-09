@@ -58,6 +58,7 @@ export default {
         .then(() => {
           cookies.remove("user");
           cookies.remove("auth-token");
+          this.user = null;
           this.$router.push("/");
         })
         .catch((error) => {
