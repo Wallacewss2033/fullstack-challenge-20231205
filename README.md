@@ -54,11 +54,6 @@ php artisan migrate
 ```
 php artisan db:seed
 ```
-
-- Para rodar o projeto
-```
-php artisan serve
-```
 -  adione na .env a variável ``` REDIS_CLIENT ``` com o valor ``` 'predis' ```
 
 ![image](https://github.com/Wallacewss2033/fullstack-challenge-20231205/assets/39920409/8cc0f462-cefe-4e06-812b-d89af831a5f8)
@@ -67,6 +62,11 @@ php artisan serve
 
 ![image](https://github.com/Wallacewss2033/fullstack-challenge-20231205/assets/39920409/a2398a76-7975-4cf3-b7ca-616854a50b8a)
 
+- Agora altere as variáveis de Mail:
+
+![image](https://github.com/Wallacewss2033/fullstack-challenge-20231205/assets/39920409/b18965dc-9a86-4d7d-9951-0e3137f5f198)
+
+
 - Logo após rode os comandos em terminais diferentes
 ```
 php artisan horizon
@@ -74,7 +74,10 @@ php artisan horizon
 ```
  php artisan queue:work
 ```
-
+- Para rodar o projeto
+```
+php artisan serve
+```
 ### front-end
 
 - Entre na pasta onfly-web e instale as dependencias
