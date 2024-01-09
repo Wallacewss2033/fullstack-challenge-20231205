@@ -67,6 +67,13 @@ php artisan serve
 
 ![image](https://github.com/Wallacewss2033/fullstack-challenge-20231205/assets/39920409/a2398a76-7975-4cf3-b7ca-616854a50b8a)
 
+- Logo após rode os comandos em terminais diferentes
+```
+php artisan horizon
+```
+```
+ php artisan queue:work
+```
 
 ### front-end
 
