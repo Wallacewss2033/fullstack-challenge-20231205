@@ -59,6 +59,14 @@ php artisan db:seed
 ```
 php artisan serve
 ```
+-  adione na .env a variável ``` REDIS_CLIENT ``` com o valor ``` 'predis' ```
+
+![image](https://github.com/Wallacewss2033/fullstack-challenge-20231205/assets/39920409/8cc0f462-cefe-4e06-812b-d89af831a5f8)
+
+-  altere na .env a variável ``` QUEUE_CONNECTION ``` para o valor de ``` 'redis' ```
+
+![image](https://github.com/Wallacewss2033/fullstack-challenge-20231205/assets/39920409/a2398a76-7975-4cf3-b7ca-616854a50b8a)
+
 
 ### front-end
 
