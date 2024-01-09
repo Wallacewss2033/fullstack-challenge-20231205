@@ -56,7 +56,7 @@ export default {
       endPoints
         .post(`/logout`, "", true)
         .then(() => {
-          cookies.remove("name");
+          cookies.remove("user");
           cookies.remove("auth-token");
           this.$router.push("/");
         })
